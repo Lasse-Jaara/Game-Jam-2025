@@ -2,7 +2,7 @@
 
 **Game Jam 2025** is a built using **Godot 4.4.1**.
 
-## 🧊 Current Status: On Hold
+## 🚧 Current Status: In Development
 
 This reposity is for save time in "GMTK Game Jam 2025" thats allows pre creating blank project. This is blank godot 4.4.1 project for now :]
 
