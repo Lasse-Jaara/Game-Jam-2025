@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8h0bastuydw2"]
+
+[ext_resource type="Script" uid="uid://ctt4p4psyr260" path="res://Scripts/player_3d.gd" id="1_ryx18"]
+[ext_resource type="Script" uid="uid://bco6ic2dxk2dx" path="res://Scenes/player_visuals.gd" id="2_pll4t"]
+[ext_resource type="PackedScene" uid="uid://yn5ohat2few1" path="res://Assets/models/player.glb" id="3_pll4t"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pll4t"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pll4t"]
+radius = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ryx18"]
+
+[node name="Player3D" type="CharacterBody3D"]
+script = ExtResource("1_ryx18")
+
+[node name="PlayerVisuals" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_pll4t")
+
+[node name="player" parent="PlayerVisuals" instance=ExtResource("3_pll4t")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerVisuals/player"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 3.33333)
+mesh = SubResource("BoxMesh_pll4t")
+
+[node name="GroundCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_pll4t")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 1, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot"]
+shape = SubResource("SphereShape3D_ryx18")
+spring_length = 9.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D"]
+unique_name_in_owner = true
