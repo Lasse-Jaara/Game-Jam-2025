@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxlvvqkiyudp6"]
+
+[ext_resource type="Script" uid="uid://cbwtjxbiyhdy0" path="res://Scripts/player_weapon.gd" id="1_7ao4s"]
+[ext_resource type="Material" uid="uid://bphcf544f8g4v" path="res://Materials/MatGun.tres" id="2_xbrrx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tdos4"]
+
+[node name="PlayerWeapon" type="Node3D"]
+script = ExtResource("1_7ao4s")
+
+[node name="Gun" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.55671e-08, 0, -0.7, 0, 0.7, 0, 1.5, 0, -3.0598e-08, 0.025, 0, -0.75)
+material_override = ExtResource("2_xbrrx")
+mesh = SubResource("BoxMesh_tdos4")
+
+[node name="BulletPosition" type="Marker3D" parent="Gun"]
+transform = Transform3D(-2.91409e-08, 0, 1.42857, 0, 1.42857, 0, -0.666667, 0, -6.24448e-08, -0.666667, 0, 0)

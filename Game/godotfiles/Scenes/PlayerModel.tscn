@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8wqrcftorjnr"]
+
+[ext_resource type="PackedScene" uid="uid://yn5ohat2few1" path="res://Assets/models/player.glb" id="1_pwkit"]
+[ext_resource type="Material" uid="uid://bjk480sgffgc2" path="res://Materials/MatPlayer.tres" id="2_qarfo"]
+
+[node name="PlayerModel" instance=ExtResource("1_pwkit")]
+
+[node name="Sphere" parent="." index="0"]
+material_override = ExtResource("2_qarfo")
