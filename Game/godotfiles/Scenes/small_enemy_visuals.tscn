@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvaiqkeipw6u6"]
+
+[ext_resource type="PackedScene" uid="uid://cc11y04kjs6qp" path="res://Assets/models/SmallEnemy.glb" id="1_fm0m0"]
+[ext_resource type="Material" uid="uid://cbnc0mxj45a64" path="res://Materials/MatEnemy.tres" id="2_rku7u"]
+
+[node name="SmallEnemy" instance=ExtResource("1_fm0m0")]
+
+[node name="Cube" parent="." index="0"]
+material_override = ExtResource("2_rku7u")

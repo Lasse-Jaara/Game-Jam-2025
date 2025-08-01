@@ -1,17 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8h0bastuydw2"]
+[gd_scene load_steps=6 format=3 uid="uid://b8h0bastuydw2"]
 
 [ext_resource type="Script" uid="uid://ctt4p4psyr260" path="res://Scripts/player_3d.gd" id="1_ryx18"]
 [ext_resource type="Script" uid="uid://bco6ic2dxk2dx" path="res://Scenes/player_visuals.gd" id="2_pll4t"]
 [ext_resource type="PackedScene" uid="uid://c8wqrcftorjnr" path="res://Scenes/PlayerModel.tscn" id="3_pll4t"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_pll4t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pll4t"]
 radius = 0.6
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ryx18"]
 
-[node name="Player3D" type="CharacterBody3D"]
+[node name="Player3D" type="CharacterBody3D" groups=["players"]]
 script = ExtResource("1_ryx18")
 
 [node name="PlayerVisuals" type="Node3D" parent="."]
@@ -20,12 +18,6 @@ script = ExtResource("2_pll4t")
 
 [node name="player" parent="PlayerVisuals" instance=ExtResource("3_pll4t")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerVisuals/player"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 3.33333)
-visible = false
-mesh = SubResource("BoxMesh_pll4t")
-skeleton = NodePath("")
 
 [node name="GroundCollision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

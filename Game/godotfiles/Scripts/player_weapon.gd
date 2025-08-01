@@ -7,7 +7,7 @@ const BULLET = preload("res://Scenes/bullet.tscn")
 var one = true
 
 func get_nearest_enemy() -> Node3D:
-	var enemies = get_tree().get_nodes_in_group("enemys")
+	var enemies = get_tree().get_nodes_in_group("enemies")
 	var closest: Node3D = null
 	var min_distance = INF
 	for enemy in enemies:
@@ -32,7 +32,6 @@ func _unhandled_input(event: InputEvent) -> void: # _unhandled_input(): Called o
 		if one:
 			spawn_instance(bullet_position.global_transform.origin)
 		#print(bullet_position.global_transform.origin)
-
 
 
 func spawn_instance(gun_position: Vector3) -> void:
